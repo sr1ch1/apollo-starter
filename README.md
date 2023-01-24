@@ -4,10 +4,10 @@
 ## Getting started
 
 This project provides a starting point for developing a GraphQL server based on Apollo Server.
-The project comes with a working resolvers and an exemplary implementation of a data source.
+The project comes with working resolvers and an exemplary implementation of a data source.
 
-Also, unit, integration and API tests are available. All implemented [features](docs/features.md) are documents
-as well as the [application architecture](docs/architecture.md)
+Also, unit, integration and API tests are available. Implemented [features](docs/features.md) are documented
+and you can find a high-level overview of the [application architecture](docs/architecture.md)
 
 ### Prerequisites
 
@@ -26,7 +26,7 @@ as well as the [application architecture](docs/architecture.md)
 
 ## Installation
 
-To install the projects dependencies run
+To install the project dependencies run
 
 ```sh
 yarn
@@ -66,10 +66,22 @@ yarn lint:fix
 
 ## Testing
 
-For executing the tests run
+For executing the unit tests run
 
 ```sh
 yarn test
+```
+Start integration test with
+```sh
+yarn test:integration
+```
+and API tests with
+```sh
+yarn test:api
+```
+Running all tests:
+```sh
+yarn test:all
 ```
 
 For running tests continuously (TDD) do
@@ -92,11 +104,16 @@ To build the project run
 yarn build
 ```
 
-The built project will be available in the folder `dist`
+The built project will be available in the folder `build`
+
+To create a self-contained build (i.e. for Docker) run:
+```sh
+yarn build:self-contained
+```
 
 ### Cleanup
 
-Automatically created directory (`dist`/`coverage`) can be cleaned up with
+Automatically created directories (`build`/`coverage`) can be cleaned up with
 
 ```sh
 yarn clean
