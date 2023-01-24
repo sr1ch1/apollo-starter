@@ -1,0 +1,15 @@
+overwrite: true
+schema:
+  - ./**/*.graphql:
+      noRequire: true
+documents: null
+generates:
+  src/models/__generated__/graphql.ts:
+    config:
+      useTypeImports: true
+    plugins:
+      - 'typescript'
+      - 'typescript-resolvers'
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'

@@ -1,0 +1,27 @@
+{
+  "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "typeRoots": ["./node_modules/@types"],
+    "lib": [ "ES2021" ],
+    "outDir": "build",
+    "baseUrl": "src",
+    "module": "commonjs",
+    "target": "ES2022",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "incremental": true,
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "sourceMap": false,
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/models/__generated__/**/*.ts"
+  ],
+  "skipLibCheck": true,
+  "forceConsistentCasingInFileNames": true
+}

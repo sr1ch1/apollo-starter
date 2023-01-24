@@ -1,0 +1,5 @@
+coverage/*
+node_modules/*
+build/*
+src/models/__generated__
+src/global.d.ts

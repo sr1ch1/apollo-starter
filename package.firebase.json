@@ -1,0 +1,11 @@
+{
+  "name": "apollo-starter",
+  "version": "1.0.0",
+  "description": "Project that provides a starting point for a GraohQL project based on Apollo Server 4.",
+  "main": "src/server/firebase/server.js",
+  "author": "Sandro Richi",
+  "license": "MIT",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions"
+  }
+}

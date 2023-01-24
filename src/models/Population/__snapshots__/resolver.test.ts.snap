@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Population Resolver should resolve correctly 1`] = `
+{
+  "body": {
+    "kind": "single",
+    "singleResult": {
+      "data": {
+        "populations": [
+          {
+            "id": "01000US_01000US",
+            "nation": "United States",
+            "population": 326569308,
+            "year": 2020,
+          },
+          {
+            "id": "01000US_01000US",
+            "nation": "United States",
+            "population": 324697795,
+            "year": 2019,
+          },
+        ],
+      },
+      "errors": undefined,
+    },
+  },
+  "http": {
+    "headers": Map {
+      "cache-control" => "no-store",
+    },
+    "status": undefined,
+  },
+}
+`;

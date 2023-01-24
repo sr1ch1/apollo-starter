@@ -1,0 +1,12 @@
+options:
+  concurrency: 0 # Use all CPUs
+  ignoreExtensions: .graphql
+  ignores:
+    - 'bluebird'
+    - 'request'
+
+packages:
+  # Trace an API server entry point.
+  api:
+    trace:
+      - build/server/fastify/server.js

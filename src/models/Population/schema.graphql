@@ -1,0 +1,27 @@
+"""
+Describes the population of a nation at a certain year.
+"""
+type NationalPopulation {
+  id: ID!
+  """
+  Nation the population data belongs to.
+  """
+  nation: String!
+  """
+  Number of people in a nation.
+  """
+  population: Int!
+  """
+  Year the population applies to.
+  """
+  year: Int!
+}
+"""
+Lists all available queries in the Population domain.
+"""
+type Query {
+  """
+  Provides information about the us population
+  """
+  populations: [NationalPopulation!]!
+}

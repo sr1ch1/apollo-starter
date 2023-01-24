@@ -1,0 +1,24 @@
+"""
+This type describes information about a server.
+"""
+type ServerInfo {
+  id: ID!
+  """
+  The Name of the server.
+  """
+  name: String
+  """
+  Current status of the server.
+  """
+  status: String
+}
+
+"""
+Lists all available queries in the Info domain.
+"""
+type Query {
+  """
+  Provides general information about the GraphQL server
+  """
+  serverInfo: ServerInfo!
+}
