@@ -15,14 +15,16 @@
   resolved "https://registry.npmjs.org/@apollo/cache-control-types/-/cache-control-types-1.0.2.tgz"
   integrity sha512-Por80co1eUm4ATsvjCOoS/tIR8PHxqVjsA6z76I6Vw0rFn4cgyVElQcmQDIZiYsy41k8e5xkrMRECkM2WR8pNw==
 
-"@apollo/datasource-rest@^4.3.2":
-  version "4.3.2"
-  resolved "https://registry.npmjs.org/@apollo/datasource-rest/-/datasource-rest-4.3.2.tgz"
-  integrity sha512-qTilJGy5CnqVOvyhkK8hzcCY+Hr8UaY3EgCbKQqlxO1yxp75qGtGapLhQMC/h578V8MYR773t/kLYnQe5eJg/w==
+"@apollo/datasource-rest@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@apollo/datasource-rest/-/datasource-rest-5.0.1.tgz#d0f49218c7acf44ada74b641b5545dffa55a8053"
+  integrity sha512-nV1IVU7tY9ym+UxiNyRvFyU9lxocMlwEHooeFAsh/M90Gox2DyztcuoFTAsCBYws1fBb1aJbS/tIu+vqUdtONQ==
   dependencies:
-    "@apollo/utils.fetcher" "^1.0.0"
-    "@apollo/utils.keyvaluecache" "1.0.1"
+    "@apollo/utils.fetcher" "^2.0.0"
+    "@apollo/utils.keyvaluecache" "^2.0.0"
+    "@types/http-cache-semantics" "^4.0.1"
     http-cache-semantics "^4.1.0"
+    lodash.isplainobject "^4.0.6"
     node-fetch "^2.6.7"
 
 "@apollo/protobufjs@1.2.7":
@@ -43,23 +45,23 @@
     "@types/long" "^4.0.0"
     long "^4.0.0"
 
-"@apollo/server-gateway-interface@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/@apollo/server-gateway-interface/-/server-gateway-interface-1.0.7.tgz"
-  integrity sha512-Eas36z851D0B0Hw8Ihpig2thHcoVAcFE7/I0+DAOaXr70r8kajPq5QHhngqFrlSTVl4AlJ7Yw1SGaWdvuSmDPQ==
+"@apollo/server-gateway-interface@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@apollo/server-gateway-interface/-/server-gateway-interface-1.1.0.tgz#592a6dfcf0359a15785ec62c1b6fa51ca761fe08"
+  integrity sha512-0rhG++QtGfr4YhhIHgxZ9BdMFthaPY6LbhI9Au90osbfLMiZ7f8dmZsEX1mp7O1h8MJwCu6Dp0I/KcGbSvfUGA==
   dependencies:
     "@apollo/usage-reporting-protobuf" "^4.0.0"
     "@apollo/utils.fetcher" "^2.0.0"
-    "@apollo/utils.keyvaluecache" "^2.0.1"
+    "@apollo/utils.keyvaluecache" "^2.1.0"
     "@apollo/utils.logger" "^2.0.0"
 
-"@apollo/server@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.npmjs.org/@apollo/server/-/server-4.3.0.tgz"
-  integrity sha512-M30z/hExJtvqGE4UFJTa0W7FoRPPXmEjrrHK16+v63hE+deH1gYiXq0MdXKvMdoQhQQqnv09jo9mDDEpMBJvjg==
+"@apollo/server@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@apollo/server/-/server-4.3.2.tgz#f2852f5b8f6266116fa93dc90e499cdaec6fa0f8"
+  integrity sha512-ZiAA31ruAGNmyUapclR70j/asG2Pn/m+Md9W/+EHVb34/pZhgpv+wNdeOw+7YYa+r78nme300C7pfX4pRWsolA==
   dependencies:
     "@apollo/cache-control-types" "^1.0.2"
-    "@apollo/server-gateway-interface" "^1.0.7"
+    "@apollo/server-gateway-interface" "^1.1.0"
     "@apollo/usage-reporting-protobuf" "^4.0.0"
     "@apollo/utils.createhash" "^2.0.0"
     "@apollo/utils.fetcher" "^2.0.0"
@@ -80,7 +82,7 @@
     loglevel "^1.6.8"
     lru-cache "^7.10.1"
     negotiator "^0.6.3"
-    node-abort-controller "^3.0.1"
+    node-abort-controller "3.0.1"
     node-fetch "^2.6.7"
     uuid "^9.0.0"
     whatwg-mimetype "^3.0.0"
@@ -105,11 +107,6 @@
   resolved "https://registry.npmjs.org/@apollo/utils.dropunuseddefinitions/-/utils.dropunuseddefinitions-2.0.0.tgz"
   integrity sha512-BoPW+Z3kA8kLh0FCWyzOt+R77W5mVZWer5s6UyvVwZ/qROGiEgcHXFcI5TMMndpXoDo0xBSvQV0lIKYHbJQ7+g==
 
-"@apollo/utils.fetcher@^1.0.0":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@apollo/utils.fetcher/-/utils.fetcher-1.1.1.tgz"
-  integrity sha512-0vXVznO7kw5VWwxyV5wsDvYEwjDpyZ7vYQAXCseLXqBn2eWEIDViM7qRzi/Hnv4zzAQ05phdimSED99K+lg+SQ==
-
 "@apollo/utils.fetcher@^2.0.0":
   version "2.0.0"
   resolved "https://registry.npmjs.org/@apollo/utils.fetcher/-/utils.fetcher-2.0.0.tgz"
@@ -120,26 +117,13 @@
   resolved "https://registry.npmjs.org/@apollo/utils.isnodelike/-/utils.isnodelike-2.0.0.tgz"
   integrity sha512-77CiAM2qDXn0haQYrgX0UgrboQykb+bOHaz5p3KKItMwUZ/EFphzuB2vqHvubneIc9dxJcTx2L7MFDswRw/JAQ==
 
-"@apollo/utils.keyvaluecache@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@apollo/utils.keyvaluecache/-/utils.keyvaluecache-1.0.1.tgz"
-  integrity sha512-nLgYLomqjVimEzQ4cdvVQkcryi970NDvcRVPfd0OPeXhBfda38WjBq+WhQFk+czSHrmrSp34YHBxpat0EtiowA==
-  dependencies:
-    "@apollo/utils.logger" "^1.0.0"
-    lru-cache "^7.10.1"
-
-"@apollo/utils.keyvaluecache@^2.0.1", "@apollo/utils.keyvaluecache@^2.1.0":
+"@apollo/utils.keyvaluecache@^2.0.0", "@apollo/utils.keyvaluecache@^2.1.0":
   version "2.1.0"
-  resolved "https://registry.npmjs.org/@apollo/utils.keyvaluecache/-/utils.keyvaluecache-2.1.0.tgz"
+  resolved "https://registry.yarnpkg.com/@apollo/utils.keyvaluecache/-/utils.keyvaluecache-2.1.0.tgz#90b3d1ca7e0e97a51f6705743057b0e5b8902480"
   integrity sha512-WBNI4H1dGX2fHMk5j4cJo7mlXWn1X6DYCxQ50IvmI7Xv7Y4QKiA5EwbLOCITh9OIZQrVX7L0ASBSgTt6jYx/cg==
   dependencies:
     "@apollo/utils.logger" "^2.0.0"
     lru-cache "^7.14.1"
-
-"@apollo/utils.logger@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@apollo/utils.logger/-/utils.logger-1.0.1.tgz"
-  integrity sha512-XdlzoY7fYNK4OIcvMD2G94RoFZbzTQaNP0jozmqqMudmaGo2I/2Jx71xlDJ801mWA/mbYRihyaw6KJii7k5RVA==
 
 "@apollo/utils.logger@^2.0.0":
   version "2.0.0"
@@ -2445,6 +2429,11 @@
   integrity sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==
   dependencies:
     "@types/node" "*"
+
+"@types/http-cache-semantics@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@types/http-cache-semantics/-/http-cache-semantics-4.0.1.tgz#0ea7b61496902b95890dc4c3a116b60cb8dae812"
+  integrity sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.4"
@@ -7150,9 +7139,9 @@ no-case@^3.0.4:
     lower-case "^2.0.2"
     tslib "^2.0.3"
 
-node-abort-controller@^3.0.1:
+node-abort-controller@3.0.1:
   version "3.0.1"
-  resolved "https://registry.npmjs.org/node-abort-controller/-/node-abort-controller-3.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/node-abort-controller/-/node-abort-controller-3.0.1.tgz#f91fa50b1dee3f909afabb7e261b1e1d6b0cb74e"
   integrity sha512-/ujIVxthRs+7q6hsdjHMaj8hRG9NuWmwrz+JdRwZ14jdFoKSkm+vDsCbF9PLpnSqjaWQJuTmVtcWHNLr+vrOFw==
 
 node-domexception@1.0.0:
