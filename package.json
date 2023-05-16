@@ -61,7 +61,7 @@
     "fastify-cli": "^5.7.1",
     "fastify-plugin": "^4.5.0",
     "firebase-admin": "^11.5.0",
-    "firebase-functions": "^4.2.1",
+    "firebase-functions": "^4.3.0",
     "fluent-json-schema": "^4.1.0",
     "graphql": "^16.6.0",
     "graphql-import-node": "^0.0.5",
