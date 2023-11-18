@@ -8,5 +8,13 @@ options:
 packages:
   # Trace an API server entry point.
   api:
+    dynamic:
+      resolutions:
+        "@graphql-tools/load-files/cjs/index.js":
+          - C:/Source/apollo-starter/build/src/models/Info/schema.graphql
+          - C:/Source/apollo-starter/build/src/models/Population/schema.graphql
+        "@graphql-tools/load-files/esm/index.js":
+          - C:/Source/apollo-starter/build/src/models/Info/schema.graphql
+          - C:/Source/apollo-starter/build/src/models/Population/schema.graphql
     trace:
-      - build/server/fastify/server.js
+      - build/src/server/fastify/server.js
