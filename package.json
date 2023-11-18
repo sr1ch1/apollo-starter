@@ -1,6 +1,6 @@
 {
   "name": "apollo-starter",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Project that provides a starting point for a GraphQL project based on Apollo Server 4.",
   "main": "server/firebase/server.js",
   "scripts": {
