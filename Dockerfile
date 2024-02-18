@@ -1,4 +1,4 @@
-FROM node:18.18-bullseye-slim AS base
+FROM node:18.19.1-bullseye-slim AS base
 
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
