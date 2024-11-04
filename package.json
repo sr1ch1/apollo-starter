@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@apollo/datasource-rest": "^6.2.2",
-    "@apollo/server": "^4.9.5",
+    "@apollo/server": "^4.11.1",
     "@as-integrations/fastify": "^2.1.1",
     "@fastify/rate-limit": "^9.0.0",
     "@fastify/sensible": "^5.5.0",
