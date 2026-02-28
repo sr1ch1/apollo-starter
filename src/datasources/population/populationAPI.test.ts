@@ -12,8 +12,9 @@ describe('populationAPI.getPopulations', () => {
     const populations = await populationAPI.getPopulations();
 
     expect(populations.data.length).toBeGreaterThan(0);
-    // @ts-ignore first element is there because of the assertion in the line above
-    expect(populations.data[0].Population).toBeGreaterThan(0);
-    expect(populations.source.length).toBeGreaterThan(0);
+    expect(populations.columns.length).toBeGreaterThan(0);
+
+    const firstRecord = populations.data[0];
+    expect(firstRecord?.Population).toBeGreaterThan(0);
   });
 });

@@ -6,5 +6,5 @@ export const environmentSchema = z.object({
   populationUrl: z
     .string({ required_error: 'URL for population API is required' })
     .url()
-    .default('https://datausa.io/api/data?drilldowns=Nation&measures=Population'),
+    .default('https://api.datausa.io/tesseract/data.jsonrecords?cube=acs_yg_total_population_5&drilldowns=State,Year&measures=Population'),
 });

@@ -6,8 +6,8 @@ export const populationResolver = {
     populations: async (_, __, context): Promise<NationalPopulation[]> => {
       const result: PopulationsResponse = await context.dataSources.populationAPI.getPopulations();
       return result.data.map((record) => ({
-        id: `${record['ID Nation']}_${record['ID Nation']}`,
-        nation: record.Nation,
+        id: record['State ID'],
+        nation: record.State,
         year: Number(record.Year),
         population: record.Population,
       }));

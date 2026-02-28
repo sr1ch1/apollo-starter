@@ -1,9 +1,11 @@
 import fetch from 'make-fetch-happen';
 import { RESTDataSource } from '@apollo/datasource-rest';
-import { EnvironmentFactory } from '../../server/configuration/environmentFactory';
+import { Environment, EnvironmentFactory } from '../../server/configuration/environmentFactory';
 import type { DataSourceConfig } from '@apollo/datasource-rest/dist/RESTDataSource';
 
 export class RetryingRestDataSource extends RESTDataSource {
+  protected env: Environment;
+
   constructor(config?: DataSourceConfig, env = EnvironmentFactory.create()) {
     super({
       ...{
@@ -19,5 +21,6 @@ export class RetryingRestDataSource extends RESTDataSource {
       },
       ...config,
     });
+    this.env = env;
   }
 }

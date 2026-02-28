@@ -20,45 +20,43 @@ describe('Population Resolver', () => {
   it('should resolve correctly', async () => {
     const stub = new FetcherStub();
     stub
-      .get('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
+      .get('https://api.datausa.io/tesseract/data.jsonrecords?cube=acs_yg_total_population_5&drilldowns=State,Year&measures=Population')
       .responds()
       .withStatusCode(200)
       .withBody(
         `{
+    "annotations": {
+        "dataset_link": "http://www.census.gov/programs-surveys/acs/",
+        "source_name": "Census Bureau",
+        "topic": "Diversity",
+        "source_description": "The American Community Survey (ACS) is conducted by the US Census and sent to a portion of the population every year.",
+        "subtopic": "Demographics",
+        "table_id": "B01003",
+        "dataset_name": "ACS 5-year Estimate"
+    },
+    "page": {
+        "limit": 0,
+        "offset": 0,
+        "total": 52
+    },
+    "columns": [
+        "State ID",
+        "State",
+        "Year",
+        "Population"
+    ],
     "data": [
         {
-            "ID Nation": "01000US",
-            "Nation": "United States",
-            "ID Year": 2020,
-            "Year": "2020",
-            "Population": 326569308,
-            "Slug Nation": "united-states"
+            "State ID": "04000US01",
+            "State": "Alabama",
+            "Year": 2021,
+            "Population": 53853646.0
         },
         {
-            "ID Nation": "01000US",
-            "Nation": "United States",
-            "ID Year": 2019,
-            "Year": "2019",
-            "Population": 324697795,
-            "Slug Nation": "united-states"
-        }
-    ],
-    "source": [
-        {
-            "measures": [
-                "Population"
-            ],
-            "annotations": {
-                "source_name": "Census Bureau",
-                "source_description": "The American Community Survey (ACS) is conducted by the US Census and sent to a portion of the population every year.",
-                "dataset_name": "ACS 5-year Estimate",
-                "dataset_link": "http://www.census.gov/programs-surveys/acs/",
-                "table_id": "B01003",
-                "topic": "Diversity",
-                "subtopic": "Demographics"
-            },
-            "name": "acs_yg_total_population_5",
-            "substitutions": []
+            "State ID": "04000US02",
+            "State": "Alaska",
+            "Year": 2021,
+            "Population": 8074728.0
         }
     ]
 }`,

@@ -44,9 +44,6 @@
     "url": "https://github.com/sr1ch1/apollo-starter/issues"
   },
   "homepage": "https://github.com/sr1ch1/apollo-starter#readme",
-  "engines": {
-    "node": "18"
-  },
   "dependencies": {
     "@apollo/datasource-rest": "^6.2.2",
     "@apollo/server": "^4.9.5",

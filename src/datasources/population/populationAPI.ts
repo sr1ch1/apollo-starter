@@ -1,33 +1,30 @@
 import { z } from 'zod';
 import { RetryingRestDataSource } from '../../shared/utils/retryingRestDataSource';
 
-const PopulationsResponseSchema = z.object({
+export const PopulationsResponseSchema = z.object({
+  annotations: z.object({
+    dataset_link: z.string().url(),
+    source_name: z.string(),
+    topic: z.string(),
+    source_description: z.string(),
+    subtopic: z.string(),
+    table_id: z.string(),
+    dataset_name: z.string(),
+  }),
+  page: z.object({
+    limit: z.number(),
+    offset: z.number(),
+    total: z.number(),
+  }),
+  columns: z.array(z.string()),
   data: z.array(
     z.object({
-      'ID Nation': z.string(),
-      'ID Year': z.number(),
-      'Slug Nation': z.string(),
-      Nation: z.string(),
-      Year: z.string(),
+      'State ID': z.string(),
+      State: z.string(),
+      Year: z.number(),
       Population: z.number(),
     }),
-  ),
-  source: z.array(
-    z.object({
-      measures: z.array(z.string()),
-      annotations: z.object({
-        source_name: z.string(),
-        source_description: z.string(),
-        dataset_name: z.string(),
-        dataset_link: z.string().url(),
-        table_id: z.string(),
-        topic: z.string(),
-        subtopic: z.string(),
-      }),
-      name: z.string(),
-      substitutions: z.array(z.string()),
-    }),
-  ),
+  ).nonempty(),
 });
 
 export type PopulationsResponse = z.infer<typeof PopulationsResponseSchema>;
@@ -37,10 +34,8 @@ export interface IPopulationAPI {
 }
 
 export class PopulationAPI extends RetryingRestDataSource implements IPopulationAPI {
-  override baseURL = 'https://datausa.io/api/';
-
   async getPopulations(): Promise<PopulationsResponse> {
-    const data = await this.get('data?drilldowns=Nation&measures=Population');
+    const data = await this.get(this.env.populationUrl);
     return PopulationsResponseSchema.parse(data);
   }
 }
