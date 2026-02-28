@@ -4,7 +4,9 @@ import { z } from 'zod';
 export const environmentSchema = z.object({
   // the population API URL
   populationUrl: z
-    .string({ required_error: 'URL for population API is required' })
+    .string()
     .url()
-    .default('https://api.datausa.io/tesseract/data.jsonrecords?cube=acs_yg_total_population_5&drilldowns=State,Year&measures=Population'),
+    .default(
+      'https://api.datausa.io/tesseract/data.jsonrecords?cube=acs_yg_total_population_5&drilldowns=State,Year&measures=Population',
+    ),
 });

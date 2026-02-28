@@ -17,14 +17,16 @@ export const PopulationsResponseSchema = z.object({
     total: z.number(),
   }),
   columns: z.array(z.string()),
-  data: z.array(
-    z.object({
-      'State ID': z.string(),
-      State: z.string(),
-      Year: z.number(),
-      Population: z.number(),
-    }),
-  ).nonempty(),
+  data: z
+    .array(
+      z.object({
+        'State ID': z.string(),
+        State: z.string(),
+        Year: z.number(),
+        Population: z.number(),
+      }),
+    )
+    .nonempty(),
 });
 
 export type PopulationsResponse = z.infer<typeof PopulationsResponseSchema>;

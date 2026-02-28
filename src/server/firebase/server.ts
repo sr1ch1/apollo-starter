@@ -1,7 +1,7 @@
 import * as functions from 'firebase-functions';
-const express = require('express');
+import express from 'express';
 import { build } from '../apollo/serverBuilder';
-import { expressMiddleware } from '@apollo/server/express4';
+import { expressMiddleware } from '@as-integrations/express5';
 import { ContextBuilder } from '../configuration/contextFactory';
 import { EnvironmentFactory } from '../configuration/environmentFactory';
 

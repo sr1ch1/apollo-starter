@@ -1,4 +1,4 @@
-FROM node:18.20.7-bullseye-slim AS base
+FROM node:25.7.0-bullseye-slim AS base
 
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
@@ -27,6 +27,6 @@ COPY --from=builder --chown=graphql:nodejs /app/build ./
 USER node
 
 EXPOSE 4000
-ENV NODE_ENV production
-ENV PORT 4000
+ENV NODE_ENV=production
+ENV PORT=4000
 CMD ["dumb-init", "node", "src/server/fastify/server.js"]

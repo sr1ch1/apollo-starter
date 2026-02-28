@@ -20,7 +20,9 @@ describe('Population Resolver', () => {
   it('should resolve correctly', async () => {
     const stub = new FetcherStub();
     stub
-      .get('https://api.datausa.io/tesseract/data.jsonrecords?cube=acs_yg_total_population_5&drilldowns=State,Year&measures=Population')
+      .get(
+        'https://api.datausa.io/tesseract/data.jsonrecords?cube=acs_yg_total_population_5&drilldowns=State,Year&measures=Population',
+      )
       .responds()
       .withStatusCode(200)
       .withBody(

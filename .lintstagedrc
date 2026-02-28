@@ -1,3 +1,0 @@
-{
-  "*.(js|ts|graphql)": ["npx pretty-quick --staged", "yarn lint:fix", "yarn test"]
-}
